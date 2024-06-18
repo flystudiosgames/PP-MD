@@ -19,7 +19,6 @@
       <div id="unity-warning"> </div>
     </div>
     <script>
-
       var container = document.querySelector("#unity-container");
       var canvas = document.querySelector("#unity-canvas");
       var loadingBar = document.querySelector("#unity-loading-bar");
@@ -54,9 +53,9 @@
       var buildUrl = "Build";
       var loaderUrl = buildUrl + "/PPCore.loader.js";
       var config = {
-        dataUrl: buildUrl + "/PPCore.data.unityweb",
-        frameworkUrl: buildUrl + "/PPCore.framework.js.unityweb",
-        codeUrl: buildUrl + "/PPCore.wasm.unityweb",
+        dataUrl: buildUrl + "/PPCore.data",
+        frameworkUrl: buildUrl + "/PPCore.framework.js",
+        codeUrl: buildUrl + "/PPCore.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "PPUCore",
@@ -85,7 +84,7 @@
         // performance, uncomment the following line:
         // config.devicePixelRatio = 1;
 
-
+        unityShowBanner('WebGL builds are not supported on mobile devices.');
       } else {
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
 
@@ -100,18 +99,16 @@
       script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
           progressBarFull.style.width = 100 * progress + "%";
-              }).then((unityInstance) => {
-                loadingBar.style.display = "none";
-                //fullscreenButton.onclick = () => {
-                  //unityInstance.SetFullscreen(1);
-                //};
-              }).catch((message) => {
-                alert(message);
-              });
-            };
-
+        }).then((unityInstance) => {
+          loadingBar.style.display = "none";
+          //fullscreenButton.onclick = () => {
+           //unityInstance.SetFullscreen(1);
+          //};
+        }).catch((message) => {
+          alert(message);
+        });
+      };
       document.body.appendChild(script);
-
     </script>
   </body>
 </html>
