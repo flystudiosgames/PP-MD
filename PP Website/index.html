@@ -17,12 +17,14 @@
         </div>
       </div>
       <div id="unity-warning"> </div>
+    
     </div>
     <script>
       var container = document.querySelector("#unity-container");
       var canvas = document.querySelector("#unity-canvas");
       var loadingBar = document.querySelector("#unity-loading-bar");
       var progressBarFull = document.querySelector("#unity-progress-bar-full");
+      //var fullscreenButton = document.querySelector("#unity-fullscreen-button");
       var warningBanner = document.querySelector("#unity-warning");
 
       // Shows a temporary message banner/ribbon for a few seconds, or
@@ -50,11 +52,11 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/PPCore.loader.js";
+      var loaderUrl = buildUrl + "/pp site.loader.js";
       var config = {
-        dataUrl: buildUrl + "/PPCore.data.unityweb",
-        frameworkUrl: buildUrl + "/PPCore.framework.js.unityweb",
-        codeUrl: buildUrl + "/PPCore.wasm.unityweb",
+        dataUrl: buildUrl + "/pp site.data.unityweb",
+        frameworkUrl: buildUrl + "/pp site.framework.js.unityweb",
+        codeUrl: buildUrl + "/pp site.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "PPUCore",
