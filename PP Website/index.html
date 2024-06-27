@@ -17,7 +17,7 @@
         </div>
       </div>
       <div id="unity-warning"> </div>
-    
+      
     </div>
     <script>
       var container = document.querySelector("#unity-container");
@@ -54,9 +54,9 @@
       var buildUrl = "Build";
       var loaderUrl = buildUrl + "/pp site.loader.js";
       var config = {
-        dataUrl: buildUrl + "/pp site.data.unityweb",
-        frameworkUrl: buildUrl + "/pp site.framework.js.unityweb",
-        codeUrl: buildUrl + "/pp site.wasm.unityweb",
+        dataUrl: buildUrl + "/pp site.data",
+        frameworkUrl: buildUrl + "/pp site.framework.js",
+        codeUrl: buildUrl + "/pp site.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "PPUCore",
@@ -102,7 +102,7 @@
           progressBarFull.style.width = 100 * progress + "%";
         }).then((unityInstance) => {
           loadingBar.style.display = "none";
-
+         
         }).catch((message) => {
           alert(message);
         });
